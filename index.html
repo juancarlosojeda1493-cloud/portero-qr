@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,24 +19,27 @@ body{
 
 .logo{
     font-size:34px;
-    margin-top:30px;
+    margin-top:40px;
 }
 
 .sub{
-    color:#aaa;
+    color:#bbb;
+    margin-top:10px;
     margin-bottom:40px;
+    font-size:20px;
 }
 
 button{
     width:90%;
-    max-width:300px;
-    padding:20px;
-    margin:10px;
+    max-width:320px;
+    padding:22px;
+    margin:15px;
     border:none;
     border-radius:18px;
-    background:#6c5ce7;
+    background:#25D366;
     color:white;
-    font-size:22px;
+    font-size:24px;
+    font-weight:bold;
 }
 
 button:active{
@@ -43,56 +47,41 @@ button:active{
 }
 
 .info{
-    margin-top:40px;
+    margin-top:50px;
     color:#888;
-    font-size:14px;
+    font-size:15px;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <div class="logo">
-📱 PORTERO QR
+📱 PORTERO INTELIGENTE POR QR
 </div>
 
 <div class="sub">
-Escanee el QR y llame
+Edificio CONING II
 </div>
 
-<h2>Seleccione Departamento</h2>
+<h2>
+Escanee el código, seleccione el departamento y llame
+</h2>
 
-<button onclick="llamar('edificio-3a')">
-3A
+<a href="https://wa.me/5493624109381?text=Hola%20estoy%20en%20la%20entrada%20del%20edificio%20CONING%20II">
+
+<button>
+Llamar 11A
 </button>
 
-<button onclick="llamar('edificio-3b')">
-3B
-</button>
-
-<button onclick="llamar('edificio-4a')">
-4A
-</button>
-
-<button onclick="llamar('edificio-4b')">
-4B
-</button>
+</a>
 
 <div class="info">
-Sin aplicación • Audio y Video
+Sin aplicación • Audio y video
 </div>
 
-<script>
-
-function llamar(sala){
-
-window.location.href =
-"https://meet.jit.si/" + sala;
-
-}
-
-</script>
-
 </body>
+
 </html>
