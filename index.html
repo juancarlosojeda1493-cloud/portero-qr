@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portero QR</title>
+
+<style>
+
+body{
+    background:#111;
+    color:white;
+    font-family:Arial;
+    text-align:center;
+    padding:20px;
+}
+
+.logo{
+    font-size:34px;
+    margin-top:30px;
+}
+
+.sub{
+    color:#aaa;
+    margin-bottom:40px;
+}
+
+button{
+    width:90%;
+    max-width:300px;
+    padding:20px;
+    margin:10px;
+    border:none;
+    border-radius:18px;
+    background:#6c5ce7;
+    color:white;
+    font-size:22px;
+}
+
+button:active{
+    transform:scale(0.98);
+}
+
+.info{
+    margin-top:40px;
+    color:#888;
+    font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="logo">
+📱 PORTERO QR
+</div>
+
+<div class="sub">
+Escanee el QR y llame
+</div>
+
+<h2>Seleccione Departamento</h2>
+
+<button onclick="llamar('edificio-3a')">
+3A
+</button>
+
+<button onclick="llamar('edificio-3b')">
+3B
+</button>
+
+<button onclick="llamar('edificio-4a')">
+4A
+</button>
+
+<button onclick="llamar('edificio-4b')">
+4B
+</button>
+
+<div class="info">
+Sin aplicación • Audio y Video
+</div>
+
+<script>
+
+function llamar(sala){
+
+window.location.href =
+"https://meet.jit.si/" + sala;
+
+}
+
+</script>
+
+</body>
+</html>
