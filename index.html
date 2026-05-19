@@ -5,37 +5,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Portero Inteligente</title>
+<title>Portero Inteligente QR</title>
 
 <style>
 
 body{
-    background:#111;
+    background:#0d1117;
     color:white;
     font-family:Arial;
     text-align:center;
     padding:20px;
+    margin:0;
 }
 
-.logo{
-    font-size:34px;
-    margin-top:30px;
+.logo-img{
+    width:180px;
+    margin-top:20px;
+    border-radius:20px;
+}
+
+.titulo{
+    font-size:32px;
     font-weight:bold;
+    margin-top:20px;
 }
 
 .sub{
-    color:#bbb;
+    color:#c9d1d9;
     margin-top:10px;
     margin-bottom:40px;
-    font-size:20px;
+    font-size:18px;
 }
 
 .box{
-    background:#1c1c1c;
-    padding:20px;
+    background:#161b22;
+    padding:25px;
     border-radius:20px;
     margin:20px auto;
-    max-width:350px;
+    max-width:360px;
+    box-shadow:0 0 15px rgba(0,0,0,0.4);
 }
 
 h2{
@@ -49,14 +57,14 @@ button{
     margin:10px;
     border:none;
     border-radius:15px;
-    background:#25D366;
+    background:#238636;
     color:white;
     font-size:22px;
     font-weight:bold;
 }
 
 .video{
-    background:#6c5ce7;
+    background:#1f6feb;
 }
 
 button:active{
@@ -65,8 +73,15 @@ button:active{
 
 .info{
     margin-top:40px;
-    color:#888;
+    color:#8b949e;
     font-size:14px;
+}
+
+.estado{
+    margin-top:20px;
+    margin-bottom:30px;
+    color:#58a6ff;
+    font-size:15px;
 }
 
 </style>
@@ -75,13 +90,53 @@ button:active{
 
 <body>
 
-<div class="logo">
-🏢 PORTERO INTELIGENTE QR
+<img src="logo.png" class="logo-img">
+
+<div class="titulo">
+PORTERO INTELIGENTE QR
 </div>
 
 <div class="sub">
-Imprenta Poder Legislativo Chaco
+Imprenta Poder Legislativo del Chaco
 </div>
+
+<div class="estado">
+📍 French Nº 674 • Resistencia - Chaco
+</div>
+
+<div id="contenido"></div>
+
+<div class="info">
+Audio • Video • Atención institucional
+</div>
+
+<script>
+
+const ahora = new Date();
+
+const dia = ahora.getDay();
+
+const hora = ahora.getHours();
+const minutos = ahora.getMinutes();
+
+const horaActual = hora + minutos / 60;
+
+const inicio = 13.5;
+const fin = 19.5;
+
+const contenido =
+document.getElementById("contenido");
+
+const esDiaHabil =
+dia >= 1 && dia <= 5;
+
+const dentroHorario =
+horaActual >= inicio &&
+horaActual <= fin;
+
+if(esDiaHabil && dentroHorario){
+
+contenido.innerHTML = `
 
 <div class="box">
 
@@ -127,10 +182,31 @@ Imprenta Poder Legislativo Chaco
 
 </div>
 
-<div class="info">
-Sin aplicación • Atención inmediata
+`;
+
+}else{
+
+contenido.innerHTML = `
+
+<div class="box">
+
+<h2>
+⏰ Oficina cerrada
+</h2>
+
+<p>
+Atención:
+Lunes a Viernes
+13:30 hs a 19:30 hs
+</p>
+
 </div>
 
-</body>
+`;
 
+}
+
+</script>
+
+</body>
 </html>
